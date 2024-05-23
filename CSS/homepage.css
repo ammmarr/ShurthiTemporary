@@ -70,7 +70,15 @@
 .i-am .shruthi-dot {
   position: relative;
   top: -16px;
-  background: linear-gradient(45deg, #a150a1, #d482d4);
+  background: linear-gradient(
+    to right,
+    #ff66c4,
+    #ffde59,
+    #ab2ccb,
+    #f8256b,
+    #fd7223,
+    #0b82e4
+  );
 }
 /* Circular boxes */
 
@@ -125,7 +133,29 @@
 /* Case study items */
 
 @media only screen and (max-width: 1024px) {
+  .profile-image {
+    width: 30% !important;
+  }
+  .about-me p {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    /* flex-direction: column; */
+  }
+}
+@media only screen and (max-width: 480px) {
+  .dots-wrapper {
+    gap: 0.3rem !important;
+  }
+
+  .profile-image {
+    width: 30% !important;
+  }
   .about-me {
-    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+  .about-me p {
+    font-size: 0.6rem !important;
+    padding: 0.5rem 1rem;
+    /* flex-direction: column; */
   }
 }

@@ -1,11 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const cursor = document.querySelector(".cursor");
+  var stickyDiv = document.getElementById("cursor");
+  var links = document.querySelectorAll("a");
+  // Function to update the position of the div based on mouse movement
+  function moveDiv(event) {
+    // Get the mouse coordinates
+    var mouseX = event.clientX;
+    var mouseY = event.clientY;
 
-  document.addEventListener("mousemove", (e) => {
-    const size = Math.min(Math.max(50, e.clientY * 0.5), 150);
-    cursor.style.width = size + "px";
-    cursor.style.height = size + "px";
-    cursor.style.left = e.pageX - size / 2 + "px";
-    cursor.style.top = e.pageY - size / 2 + "px";
+    // Set the position of the div
+    stickyDiv.style.left = mouseX - stickyDiv.offsetWidth / 2 + "px";
+    stickyDiv.style.top = mouseY - stickyDiv.offsetHeight / 2 + "px";
+  }
+
+  // Add event listener for mouse movement
+  document.addEventListener("mousemove", moveDiv);
+  links.forEach(function (link) {
+    link.addEventListener("mouseenter", function (event) {
+      stickyDiv.classList.add("cursor-hovered");
+    });
+
+    link.addEventListener("mouseleave", function (event) {
+      stickyDiv.classList.remove("cursor-hovered");
+    });
   });
 });

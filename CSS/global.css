@@ -43,42 +43,40 @@ a {
   display: flex !important;
 }
 * {
-  cursor: none;
+  /* cursor: none; */
   box-sizing: border-box;
 }
 
 .cursor {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  border: 1.5px solid black;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  transform: translate(0, 0);
+  width: 8px;
+  height: 8px;
   z-index: 9999;
   pointer-events: none;
+  background-color: #ffd359;
+  border-radius: 50px;
 }
 
-.cursor::after,
 .cursor::before {
   content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ffd359;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  transform: translate(-44%, -45%);
   border-radius: 50px;
+  transition: all 1s ease;
 }
 
-.cursor::before {
-  background-color: #ffd359;
+.cursor-hovered::before {
+  transform: translate(-44%, -45%) scale(2) !important;
+  border-radius: 15px !important;
 }
 
 .cursor.click::before {
-  animation: click 5s ease-in-out forwards;
+  animation: click 5s ease;
 }
 
 @keyframes click {
@@ -103,6 +101,7 @@ a {
   width: 100%;
   overflow-x: hidden;
   white-space: nowrap;
+  /* height: 10vh; */
 }
 
 .text-2 {
@@ -229,6 +228,16 @@ a {
   width: 2rem !important;
   height: 2rem !important;
   transition: all 0.3s ease;
+  background: linear-gradient(
+    to right,
+    #ff66c4,
+    #ffde59,
+    #ab2ccb,
+    #f8256b,
+    #fd7223,
+    #0b82e4
+  );
+  animation: spin 10s linear infinite;
 }
 .active-dot {
   transition: all 0.3s ease;
@@ -237,10 +246,12 @@ a {
 }
 .inside-sidebar-dot {
   position: absolute;
-  top: 3rem;
-  right: 3rem;
+  top: 3rem !important;
+  right: 3rem !important;
 }
 .side-nav {
+  background: url("../Images/Background offwhite colour.png") center center
+    fixed;
   position: fixed;
   right: 0;
   top: 0;
@@ -249,10 +260,10 @@ a {
   justify-content: center;
   gap: 2rem;
   height: 100%;
-  width: 60%;
+  width: 100%;
   background-color: white;
   z-index: 100;
-  padding: 3rem;
+  padding: 1.5vh 2vw;
   /* display: none; */
   transition: all 0.3s ease;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -263,8 +274,19 @@ a {
 .side-nav-hidden {
   transform: translateX(100%) !important;
 }
+.border-container {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
 .mob-nav-item {
-  font-size: 2rem !important;
+  font-size: 0.6rem !important;
 }
 /* Hero Section */
 
@@ -537,6 +559,7 @@ a {
 .animated-circle {
   width: 120px;
   height: 120px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   background-color: white;
   /* margin-right: 20px; */
@@ -637,8 +660,8 @@ a {
 }
 
 @media only screen and (max-width: 1024px) {
-  .about-me {
-    flex-direction: column;
+  .section-header {
+    font-size: 1.3rem !important;
   }
   .case-study-card {
     font-size: 1rem !important;
@@ -664,20 +687,40 @@ a {
   .shruthi-dot {
     top: -6px !important;
   }
-  .description-section {
-    flex-direction: column-reverse;
+  .animated-circles-container {
+    gap: 0.5rem !important;
   }
   .animated-circle {
-    width: 100px !important;
-    height: 100px !important;
-    aspect-ratio: 1/1;
+    width: 80px;
+    height: 80px;
+  }
+  .description-text {
+    font-size: 0.8rem !important;
+  }
+
+  .circle-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .section-header {
+    font-size: 1.1rem !important;
+  }
+  .animated-circle {
+    width: 60px;
+    height: 60px;
   }
   .circle-text {
-    font-size: 1rem;
+    font-size: 0.65rem;
     font-weight: 500;
   }
 }
 @media only screen and (max-width: 480px) {
+  .section-header {
+    padding: 0.7rem 2rem;
+    font-size: 0.7rem !important;
+  }
   .show-on-mobile {
     display: block !important;
   }
@@ -687,5 +730,48 @@ a {
   .navbar {
     padding-left: 5%;
     padding-right: 5%;
+  }
+  .logo-small {
+    height: 2rem !important;
+    width: 100% !important;
+  }
+  .description-section {
+    gap: 1rem;
+  }
+  .animated-circle {
+    width: 40px;
+    height: 40px;
+  }
+  .circle-text {
+    font-size: 0.4rem;
+    font-weight: 500;
+  }
+  .description-text {
+    font-size: 0.5rem !important;
+  }
+
+  .dot {
+    width: 0.3rem !important;
+    height: 0.3rem !important;
+  }
+  .nav-dot {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  .inside-sidebar-dot {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  .marquee img {
+    height: 5rem !important;
+  }
+  .marquee .big-marquee-text {
+    font-size: 4rem !important;
+  }
+  .marquee .text-2 {
+    font-size: 4rem !important;
+  }
+  .case-study-card:hover::after {
+    display: none !important;
   }
 }
