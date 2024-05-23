@@ -43,7 +43,7 @@ a {
   display: flex !important;
 }
 * {
-  /* cursor: none; */
+  cursor: none;
   box-sizing: border-box;
 }
 
