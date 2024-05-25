@@ -59,20 +59,25 @@ a {
   border-radius: 50px;
 }
 
-.cursor::before {
+#outerCircle {
   content: "";
-  position: absolute;
+  position: fixed;
   width: 50px;
   height: 50px;
   border: 1px solid black;
-  transform: translate(-44%, -45%);
   border-radius: 50px;
-  transition: all 1s ease;
+
+  transition: border 0.2s ease, border-radius 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 2000;
 }
 
-.cursor-hovered::before {
-  transform: translate(-44%, -45%) scale(2) !important;
+.cursor-hovered {
+  transform: scale(1.4);
   border-radius: 15px !important;
+}
+.outer-circle-removed {
+  border: 1px solid transparent !important;
 }
 
 .cursor.click::before {
@@ -96,6 +101,7 @@ a {
   border-radius: 5rem;
   font-size: 30px;
   font-weight: 500;
+  width: fit-content;
 }
 .marquee {
   width: 100%;
@@ -226,8 +232,9 @@ a {
 }
 .nav-dot {
   width: 2rem !important;
-  height: 2rem !important;
+  aspect-ratio: 1/1 !important;
   transition: all 0.3s ease;
+  border-radius: 50%;
   background: linear-gradient(
     to right,
     #ff66c4,
@@ -237,7 +244,6 @@ a {
     #fd7223,
     #0b82e4
   );
-  animation: spin 10s linear infinite;
 }
 .active-dot {
   transition: all 0.3s ease;
@@ -248,6 +254,8 @@ a {
   position: absolute;
   top: 3rem !important;
   right: 3rem !important;
+  width: 2rem !important;
+  aspect-ratio: 1/1;
 }
 .side-nav {
   background: url("../Images/Background offwhite colour.png") center center
@@ -268,6 +276,7 @@ a {
   transition: all 0.3s ease;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
 .side-nav-active {
   transform: translateX(0);
 }
@@ -280,20 +289,20 @@ a {
   border: 2px solid black;
   border-radius: 2rem;
   padding: 1rem;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.7rem;
 }
 .mob-nav-item {
-  font-size: 0.6rem !important;
+  font-size: 1rem !important;
 }
 /* Hero Section */
 
 .dot {
   height: 1rem;
-  width: 0.9rem;
-  /* aspect-ratio: 1/1; */
+  aspect-ratio: 1/1;
   border-radius: 50%;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: block;
@@ -370,6 +379,7 @@ a {
   border: 1px solid #0b82e4;
   border-radius: 30px;
   overflow: hidden;
+  z-index: 100;
 }
 
 .case-study-card-02:hover {
@@ -386,6 +396,7 @@ a {
   border: 1px solid #ff66c4;
   border-radius: 30px;
   overflow: hidden;
+  z-index: 100;
 }
 
 .case-study-card-03:hover {
@@ -403,6 +414,7 @@ a {
   border: 1px solid #fd7223;
   border-radius: 30px;
   overflow: hidden;
+  z-index: 100;
 }
 
 .case-study-card-04:hover {
@@ -420,6 +432,7 @@ a {
   border: 1px solid #ab2ccb;
   border-radius: 30px;
   overflow: hidden;
+  z-index: 100;
 }
 
 .case-study-list-text-1 {
@@ -468,6 +481,7 @@ a {
 }
 .description-section .description-text {
   background-color: white;
+  color: black;
   width: 100%;
   display: flex;
   align-content: center;
@@ -518,13 +532,15 @@ a {
   display: flex;
   align-items: center;
   font-size: 35px;
-  font-weight: bold;
   justify-content: space-between;
   padding: 2rem 3%;
   border: dashed 1.5px black;
   border-radius: 30px;
   background-color: white;
   transition: all 0.3s ease;
+}
+.case-study-card span {
+  font-weight: bold;
 }
 .case-study-card:hover {
   border-radius: 5rem;
@@ -537,6 +553,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: nowrap;
 }
 .case-study-card .badges-container .card-badge {
   display: flex;
@@ -558,7 +575,7 @@ a {
 }
 .animated-circle {
   width: 120px;
-  height: 120px;
+
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   background-color: white;
@@ -667,7 +684,6 @@ a {
     font-size: 1rem !important;
   }
   .badges-container {
-    flex-wrap: wrap;
     justify-content: end !important;
     gap: 0.5rem !important;
   }
@@ -681,12 +697,7 @@ a {
     width: 0.5rem;
     height: 0.6rem;
   }
-  .i-am {
-    gap: 0.5rem !important;
-  }
-  .shruthi-dot {
-    top: -6px !important;
-  }
+
   .animated-circles-container {
     gap: 0.5rem !important;
   }
@@ -733,7 +744,7 @@ a {
   }
   .logo-small {
     height: 2rem !important;
-    width: 100% !important;
+    width: fit-content;
   }
   .description-section {
     gap: 1rem;
@@ -754,14 +765,7 @@ a {
     width: 0.3rem !important;
     height: 0.3rem !important;
   }
-  .nav-dot {
-    width: 1rem !important;
-    height: 1rem !important;
-  }
-  .inside-sidebar-dot {
-    width: 1rem !important;
-    height: 1rem !important;
-  }
+
   .marquee img {
     height: 5rem !important;
   }
@@ -773,5 +777,12 @@ a {
   }
   .case-study-card:hover::after {
     display: none !important;
+  }
+  .badges-container {
+    justify-content: end !important;
+    gap: 0.2rem !important;
+  }
+  .card-badge {
+    padding: 0.2rem 0.3rem !important;
   }
 }
