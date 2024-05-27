@@ -232,7 +232,7 @@ a {
 }
 .nav-dot {
   width: 2rem !important;
-  aspect-ratio: 1/1 !important;
+  height: 2rem !important;
   transition: all 0.3s ease;
   border-radius: 50%;
   background: linear-gradient(
