@@ -147,8 +147,11 @@
 
 @media only screen and (max-width: 480px) {
   .dots-wrapper {
-    gap: 0.3rem !important;
+    gap: 0rem !important;
     margin: 0 1rem !important;
+    div {
+      margin-bottom: 0.3rem;
+    }
   }
   .i-am {
     gap: 0.2rem !important;
