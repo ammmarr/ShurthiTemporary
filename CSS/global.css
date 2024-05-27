@@ -581,10 +581,10 @@ a {
   background-color: white;
   position: relative;
   overflow: hidden;
-  -webkit-border-radius: 50%; /* Webkit prefix for border-radius */
-  -moz-border-radius: 50%; /* Mozilla prefix for border-radius */
-  -ms-border-radius: 50%; /* Microsoft prefix for border-radius */
-  -o-border-radius: 50%; /* Opera prefix for border-radius */
+  -webkit-border-radius: 5000px !important; /* Webkit prefix for border-radius */
+  -moz-border-radius: 5000px !important; /* Mozilla prefix for border-radius */
+  -ms-border-radius: 5000px !important; /* Microsoft prefix for border-radius */
+  -o-border-radius: 5000px !important; /* Opera prefix for border-radius */
 }
 
 .colored-background {
