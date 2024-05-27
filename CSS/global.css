@@ -577,7 +577,7 @@ a {
 .animated-circle {
   width: 120px;
   height: 120px; /* Ensure height matches width for perfect circle */
-  border-radius: 5000px; /* Make it a circle */
+  border-radius: 5000px !important; /* Make it a circle */
   background-color: white;
   position: relative;
   overflow: hidden;
