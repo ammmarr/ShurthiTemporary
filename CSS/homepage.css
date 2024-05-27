@@ -6,7 +6,6 @@
   width: 100%;
   min-height: 80vh;
   padding: 0 5%;
-  gap: 4%;
 }
 
 .hello {
@@ -30,6 +29,7 @@
   gap: 1rem;
   height: fit-content;
   width: fit-content;
+  margin: 0 2.5rem;
 }
 
 .dot-1 {
@@ -67,9 +67,11 @@
   transform: translateY(10%);
   background-image: url("../Images/Dot\ for\ name.png");
   background-position: center;
+  background-repeat: no-repeat;
   height: 1rem;
+  width: 1rem;
+  border-radius: 1000px !important;
   background-size: contain;
-  aspect-ratio: 1/1;
   transform: translateY(-120%);
 }
 /* Circular boxes */
@@ -146,6 +148,7 @@
 @media only screen and (max-width: 480px) {
   .dots-wrapper {
     gap: 0.3rem !important;
+    margin: 0 1rem !important;
   }
   .i-am {
     gap: 0.2rem !important;

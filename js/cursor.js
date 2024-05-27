@@ -24,21 +24,27 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("mousemove", moveDiv);
   links.forEach(function (link) {
     link.addEventListener("mouseenter", function (event) {
+      innerCircle.classList.add("inner-circle-hovered");
       outerCircle.classList.add("cursor-hovered");
       caseStudyLinks.classList.add("outer-circle-removed");
     });
 
     link.addEventListener("mouseleave", function (event) {
+      innerCircle.classList.remove("inner-circle-hovered");
       outerCircle.classList.remove("cursor-hovered");
       caseStudyLinks.classList.add("outer-circle-removed");
     });
   });
   caseStudyLinks.forEach(function (link) {
     link.addEventListener("mouseenter", function (event) {
+      innerCircle.classList.add("inner-circle-hovered");
+
       outerCircle.classList.add("outer-circle-removed");
     });
 
     link.addEventListener("mouseleave", function (event) {
+      innerCircle.classList.remove("inner-circle-hovered");
+
       outerCircle.classList.remove("outer-circle-removed");
     });
   });
