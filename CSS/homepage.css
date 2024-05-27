@@ -162,8 +162,9 @@
     gap: 0.5rem !important;
   }
   .about-me p {
-    font-size: 0.6rem !important;
-    padding: 0.5rem 1rem;
+    font-size: 0.4rem !important;
+    word-spacing: 0.1rem;
+    padding: 0.5rem 0.8rem;
     /* flex-direction: column; */
   }
 }
