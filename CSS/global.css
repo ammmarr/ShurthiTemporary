@@ -774,6 +774,9 @@ a {
     font-size: 4rem !important;
   }
   .marquee .text-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 4rem !important;
   }
   .case-study-card {
