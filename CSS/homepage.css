@@ -149,9 +149,9 @@
   .dots-wrapper {
     gap: 0rem !important;
     margin: 0 1rem !important;
-    div {
-      margin-bottom: 0.3rem;
-    }
+  }
+  .dots-wrapper .dot {
+    margin-bottom: 0.4rem;
   }
   .i-am {
     gap: 0.2rem !important;
