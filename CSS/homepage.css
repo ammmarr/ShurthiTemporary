@@ -165,12 +165,13 @@
     width: 30% !important;
   }
   .about-me {
-    gap: 0.5rem !important;
+    gap: 0rem !important;
   }
   .about-me p {
     font-size: 0.4rem !important;
     word-spacing: 0.1rem;
     padding: 0.5rem 0.8rem;
+    margin-left: 1rem;
     /* flex-direction: column; */
   }
 }
