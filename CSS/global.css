@@ -602,6 +602,7 @@ a {
     #fd7223,
     #0b82e4
   );
+  border-radius: 5000px !important;
   animation: spin 10s linear infinite;
 }
 .circle-text {
