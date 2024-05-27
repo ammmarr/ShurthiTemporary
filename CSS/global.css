@@ -66,14 +66,13 @@ a {
   height: 50px;
   border: 1px solid black;
   border-radius: 50px;
-
   transition: border 0.2s ease, border-radius 0.2s ease, transform 0.2s ease;
   pointer-events: none;
   z-index: 2000;
 }
 
 .cursor-hovered {
-  transform: scale(1.4);
+  transform: scale(2);
   border-radius: 15px !important;
 }
 .outer-circle-removed {
@@ -575,14 +574,17 @@ a {
 }
 .animated-circle {
   width: 120px;
-
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
+  height: 120px; /* Ensure height matches width for perfect circle */
+  border-radius: 50%; /* Make it a circle */
   background-color: white;
-  /* margin-right: 20px; */
   position: relative;
   overflow: hidden;
+  -webkit-border-radius: 50%; /* Webkit prefix for border-radius */
+  -moz-border-radius: 50%; /* Mozilla prefix for border-radius */
+  -ms-border-radius: 50%; /* Microsoft prefix for border-radius */
+  -o-border-radius: 50%; /* Opera prefix for border-radius */
 }
+
 .colored-background {
   position: absolute;
   top: 0;
@@ -775,14 +777,47 @@ a {
   .marquee .text-2 {
     font-size: 4rem !important;
   }
+  .case-study-card {
+    flex-direction: column;
+    padding: 0.5rem 2% !important;
+    border-radius: 0 !important;
+    align-items: start !important;
+  }
+  .case-study-card span {
+    font-size: 2rem;
+    flex-direction: column;
+  }
+
   .case-study-card:hover::after {
     display: none !important;
   }
   .badges-container {
     justify-content: end !important;
-    gap: 0.2rem !important;
+    gap: 0.6rem !important;
+    width: 100%;
+    justify-content: center !important;
   }
   .card-badge {
+    font-size: 0.7rem !important;
     padding: 0.2rem 0.3rem !important;
+  }
+  .case-study-card-01 {
+    border-color: #0b82e4;
+    border-style: solid;
+  }
+
+  .case-study-card-02 {
+    border-color: #ff66c4;
+    border-style: solid;
+  }
+
+  .case-study-card-03 {
+    border-color: #fd7223;
+    border-style: solid;
+  }
+
+  .case-study-card-04 {
+    border-color: #ab2ccb;
+    border-style: solid;
   }
 }
